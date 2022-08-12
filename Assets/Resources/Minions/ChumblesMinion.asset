@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30f7db968a9de140b0363ecce7bfbf1, type: 3}
+  m_Name: ChumblesMinion
+  m_EditorClassIdentifier: 
+  types: 00000000
+  minionStatisticsConfig: {fileID: 11400000, guid: 8d3b2cd4d19398a488637ac0e56a27e8,
+    type: 2}
+  abilities:
+  - level: 0
+    minionAbilityConfig: {fileID: 11400000, guid: 2c6357308358b9e4f9c17f221d9dd198,
+      type: 2}
+  - level: 0
+    minionAbilityConfig: {fileID: 11400000, guid: d99e00350883b4f4db9599520494f467,
+      type: 2}
+  - level: 2
+    minionAbilityConfig: {fileID: 11400000, guid: ffa0f298eccddb84ebf8ae518946103c,
+      type: 2}
+  - level: 4
+    minionAbilityConfig: {fileID: 11400000, guid: d4c01a43ebfa14841be4515013c3956a,
+      type: 2}

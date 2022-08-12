@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Packages/com.fizz6.autofill" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/com.fizz6.core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/com.fizz6.scheduler" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,16 @@
+{
+    "name": "Fizz6.Geometry",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f7c5b88a39394314e874750ef4655131"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

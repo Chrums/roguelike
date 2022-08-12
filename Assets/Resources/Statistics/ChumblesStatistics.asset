@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c0fb900b9e6294c949b44c1cda407e, type: 3}
+  m_Name: ChumblesStatistics
+  m_EditorClassIdentifier: 
+  vitality:
+    minimum: 4
+    maximum: 256
+  agility:
+    minimum: 4
+    maximum: 256
+  strength:
+    minimum: 4
+    maximum: 256
+  toughness:
+    minimum: 4
+    maximum: 256
+  wisdom:
+    minimum: 4
+    maximum: 256
+  willpower:
+    minimum: 4
+    maximum: 256
