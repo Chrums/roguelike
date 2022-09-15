@@ -587,8 +587,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 1198833719}
-  positionMultiplier: 0.1
+  positionMultiplier: 0.05
   zoomMultiplier: 2
+  invert: 1
 --- !u!1 &1717379592
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Fizz6.Roguelike.Input;
-using Fizz6.Roguelike.World.Region.Zone;
+using Fizz6.Serialization;
 using UnityEngine;
 
 namespace Fizz6.Roguelike.World.Region
@@ -19,18 +19,18 @@ namespace Fizz6.Roguelike.World.Region
         private RegionRenderer regionRenderer;
 
         private GameObject vertexContainer;
-        private readonly Dictionary<RegionData.Vertex, RegionVertex> vertices = new();
-        public IReadOnlyDictionary<RegionData.Vertex, RegionVertex> Vertices => vertices;
+        private readonly Dictionary<RegionData.Vertex, GameObject> vertices = new();
+        public IReadOnlyDictionary<RegionData.Vertex, GameObject> Vertices => vertices;
 
         private GameObject edgeContainer;
-        private readonly Dictionary<(RegionVertex, RegionVertex), RegionEdge> edges = new();
-        public IReadOnlyDictionary<(RegionVertex, RegionVertex), RegionEdge> Edges => edges;
+        private readonly Dictionary<(RegionData.Vertex, RegionData.Vertex), GameObject> edges = new();
+        public IReadOnlyDictionary<(RegionData.Vertex, RegionData.Vertex), GameObject> Edges => edges;
         
-        public RegionVertex CurrentVertex { get; private set; }
+        public RegionData.Vertex CurrentVertex { get; private set; }
 
-        public event Action<RegionVertex> InstantiateVertexEvent;
-        public event Action<RegionEdge> InstantiateEdgeEvent;
-        public event Action<RegionVertex, RegionVertex> MoveEvent;
+        public event Action<RegionData.Vertex, GameObject> InstantiateVertexEvent;
+        public event Action<RegionData.Vertex, RegionData.Vertex, GameObject> InstantiateEdgeEvent;
+        public event Action<RegionData.Vertex, RegionData.Vertex> MoveEvent;
         
         private void Awake()
         {
@@ -54,8 +54,13 @@ namespace Fizz6.Roguelike.World.Region
                 foreach (var edge in Data.Graph[vertex])
                     Instantiate(vertex, edge);
 
-            CurrentVertex = Vertices[Data.Start];
+            CurrentVertex = Data.Start;
+            
             MoveEvent?.Invoke(null, CurrentVertex);
+
+            var serializer = new Serializer();
+            var json = serializer.Serialize(Data);
+            Data = serializer.Deserialize<RegionData>(json);
         }
         
         private void Instantiate(RegionData.Vertex vertex)
@@ -69,17 +74,15 @@ namespace Fizz6.Roguelike.World.Region
                 }
             };
             
-            var regionVertex = vertexGameObject.AddComponent<RegionVertex>();
-            regionVertex.Vertex = vertex;
-            vertices.Add(vertex, regionVertex);
+            vertices.Add(vertex, vertexGameObject);
             
-            var collider = vertexGameObject.AddComponent<CircleCollider2D>();
-            collider.radius = 1.0f;
+            var vertexCollider = vertexGameObject.AddComponent<CircleCollider2D>();
+            vertexCollider.radius = 1.0f;
             var mouseEventListener = vertexGameObject.AddComponent<MouseEventListener>();
-            void OnClick() => Move(regionVertex);
+            void OnClick() => Move(vertex);
             mouseEventListener.MouseDownEvent += OnClick;
             
-            InstantiateVertexEvent?.Invoke(regionVertex);
+            InstantiateVertexEvent?.Invoke(vertex, vertexGameObject);
         }
         
         private void Instantiate(RegionData.Vertex from, RegionData.Vertex to)
@@ -92,20 +95,16 @@ namespace Fizz6.Roguelike.World.Region
                     localPosition = from.Position
                 }
             };
-
-            var regionEdge = edgeGameObject.AddComponent<RegionEdge>();
-            regionEdge.From = from;
-            regionEdge.To = to;
-            edges.Add((vertices[from], vertices[to]), regionEdge);
-            vertices[from].Edges.Add(regionEdge);
             
-            InstantiateEdgeEvent?.Invoke(regionEdge);
+            edges.Add((from, to), edgeGameObject);
+            
+            InstantiateEdgeEvent?.Invoke(from, to, edgeGameObject);
         }
 
-        private void Move(RegionVertex target)
+        private void Move(RegionData.Vertex target)
         {
             var current = CurrentVertex;
-            if (!Data.Graph[CurrentVertex.Vertex].Contains(target.Vertex)) return;
+            if (!Data.Graph[CurrentVertex].Contains(target)) return;
             CurrentVertex = target;
             MoveEvent?.Invoke(current, target);
         }

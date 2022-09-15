@@ -1,9 +1,5 @@
 using System;
-using System.Collections.Generic;
-using Fizz6.Roguelike.Input;
-using Fizz6.Roguelike.World.Region.Zone;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Fizz6.Roguelike.World.Region
 {
@@ -29,45 +25,47 @@ namespace Fizz6.Roguelike.World.Region
             region.MoveEvent -= OnMove;
         }
         
-        private void OnMove(RegionVertex from, RegionVertex to)
+        private void OnMove(RegionData.Vertex from, RegionData.Vertex to)
         {
             if (from != null)
             {
-                Apply(from, RegionRendererConfig.Instance.DefaultVertex);
-                foreach (var neighborVertex in region.Data.Graph[from.Vertex])
+                var vertexGameObject = region.Vertices[from];
+                Apply(from, vertexGameObject, RegionRendererConfig.Instance.DefaultVertex);
+                foreach (var vertex in region.Data.Graph[from])
                 {
-                    var other = region.Vertices[neighborVertex];
-                    var edge = region.Edges[(from, other)];
-                    Apply(other, RegionRendererConfig.Instance.DefaultVertex);
+                    var option = region.Vertices[vertex];
+                    var edge = region.Edges[(from, vertex)];
+                    Apply(vertex, option, RegionRendererConfig.Instance.DefaultVertex);
                     Apply(edge, RegionRendererConfig.Instance.DefaultEdge);
                 }
             }
             
             if (to != null)
             {
-                Apply(to, RegionRendererConfig.Instance.CurrentVertex);
-                foreach (var neighborVertex in region.Data.Graph[to.Vertex])
+                var vertexGameObject = region.Vertices[to];
+                Apply(to, vertexGameObject, RegionRendererConfig.Instance.CurrentVertex);
+                foreach (var vertex in region.Data.Graph[to])
                 {
-                    var other = region.Vertices[neighborVertex];
-                    var edge = region.Edges[(to, other)];
-                    Apply(other, RegionRendererConfig.Instance.OptionVertex);
+                    var option = region.Vertices[vertex];
+                    var edge = region.Edges[(to, vertex)];
+                    Apply(vertex, option, RegionRendererConfig.Instance.OptionVertex);
                     Apply(edge, RegionRendererConfig.Instance.OptionEdge);
                 }
             }
         }
 
-        private void Apply(RegionVertex regionVertex, RegionRendererConfig.VertexConfig config)
+        private void Apply(RegionData.Vertex vertex, GameObject vertexGameObject, RegionRendererConfig.VertexConfig config)
         {
-            var spriteRenderer = regionVertex.gameObject.GetComponent<SpriteRenderer>();
+            var spriteRenderer = vertexGameObject.GetComponent<SpriteRenderer>();
             spriteRenderer.transform.localScale = Vector3.one * config.Size;
             spriteRenderer.sprite = config.Sprite;
             spriteRenderer.material = config.Material;
-            spriteRenderer.color = RegionRendererConfig.Instance.ZoneColors[regionVertex.Vertex.Type];
+            spriteRenderer.color = RegionRendererConfig.Instance.ZoneColors[vertex.ZoneType];
         }
 
-        private void Apply(RegionEdge regionEdge, RegionRendererConfig.EdgeConfig config)
+        private void Apply(GameObject edgeGameObject, RegionRendererConfig.EdgeConfig config)
         {
-            var lineRenderer = regionEdge.gameObject.GetComponent<LineRenderer>();
+            var lineRenderer = edgeGameObject.GetComponent<LineRenderer>();
             lineRenderer.material = config.Material;
             lineRenderer.startWidth = config.StartWidth;
             lineRenderer.endWidth = config.EndWidth;
@@ -75,19 +73,19 @@ namespace Fizz6.Roguelike.World.Region
             lineRenderer.endColor = config.EndColor;
         }
 
-        private void OnInstantiateVertex(RegionVertex regionVertex)
+        private void OnInstantiateVertex(RegionData.Vertex vertex, GameObject vertexGameObject)
         {
-            regionVertex.gameObject.AddComponent<SpriteRenderer>();
-            Apply(regionVertex, RegionRendererConfig.Instance.DefaultVertex);
+            vertexGameObject.AddComponent<SpriteRenderer>();
+            Apply(vertex, vertexGameObject, RegionRendererConfig.Instance.DefaultVertex);
         }
         
-        private void OnInstantiateEdge(RegionEdge regionEdge)
+        private void OnInstantiateEdge(RegionData.Vertex from, RegionData.Vertex to, GameObject edgeGameObject)
         {
-            var lineRenderer = regionEdge.gameObject.AddComponent<LineRenderer>();
+            var lineRenderer = edgeGameObject.AddComponent<LineRenderer>();
             lineRenderer.useWorldSpace = false;
             lineRenderer.SetPosition(0, Vector2.zero);
-            lineRenderer.SetPosition(1, regionEdge.To.Position - regionEdge.From.Position);
-            Apply(regionEdge, RegionRendererConfig.Instance.DefaultEdge);
+            lineRenderer.SetPosition(1, to.Position - from.Position);
+            Apply(edgeGameObject, RegionRendererConfig.Instance.DefaultEdge);
         }
     }
 }

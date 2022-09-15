@@ -13,6 +13,9 @@ namespace Fizz6.Roguelike.Camera
         
         [SerializeField] 
         private float zoomMultiplier = 2.0f;
+
+        [SerializeField] 
+        private bool invert = false;
         
         private Vector3 initialPosition;
         private Vector3 initialMousePosition;
@@ -27,7 +30,7 @@ namespace Fizz6.Roguelike.Camera
 
             if (UnityEngine.Input.GetMouseButton(0))
             {
-                var deltaPosition = (UnityEngine.Input.mousePosition - initialMousePosition) * positionMultiplier;
+                var deltaPosition = (UnityEngine.Input.mousePosition - initialMousePosition) * positionMultiplier * (invert ? -1.0f : 1.0f);
                 transform.position = initialPosition + deltaPosition;
             }
 

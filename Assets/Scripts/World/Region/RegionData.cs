@@ -19,12 +19,12 @@ namespace Fizz6.Roguelike.World.Region
             public Vector2 Position { get; }
             
             [JsonProperty]
-            public ZoneType Type { get; }
+            public ZoneType ZoneType { get; }
 
-            public Vertex(Vector2 position, ZoneType type)
+            public Vertex(Vector2 position, ZoneType zoneType)
             {
                 Position = position;
-                Type = type;
+                ZoneType = zoneType;
             }
 
             public float Weight(Vertex other) =>
