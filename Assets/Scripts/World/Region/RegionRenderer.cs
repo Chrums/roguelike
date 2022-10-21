@@ -5,16 +5,17 @@ namespace Fizz6.Roguelike.World.Region
 {
     public class RegionRenderer
     {
-
-        public event Action<RegionData.Vertex> ClickEvent;
-
         private readonly Region region;
+
+        private RegionData.Vertex currentVertex;
+        private Region.Control currentState;
 
         public RegionRenderer(Region region)
         {
             this.region = region;
             region.InstantiateVertexEvent += OnInstantiateVertex;
             region.InstantiateEdgeEvent += OnInstantiateEdge;
+            region.UpdateEvent += OnUpdate;
             region.MoveEvent += OnMove;
         }
 
@@ -22,7 +23,34 @@ namespace Fizz6.Roguelike.World.Region
         {
             region.InstantiateVertexEvent -= OnInstantiateVertex;
             region.InstantiateEdgeEvent -= OnInstantiateEdge;
+            region.UpdateEvent -= OnUpdate;
             region.MoveEvent -= OnMove;
+        }
+
+        private void OnUpdate()
+        {
+            if (region.State == currentState && region.RegionData.Current.Equals(currentVertex)) return;
+            
+            if (!currentVertex.Equals(region.RegionData.Current))
+            {
+                GameObject vertexGameObject;
+                
+                if (currentVertex != null)
+                {
+                    vertexGameObject = region.Vertices[currentVertex];
+                    Apply(currentVertex, vertexGameObject, RegionRendererConfig.Instance.DefaultVertex);
+                }
+
+                currentVertex = region.RegionData.Current;
+
+                vertexGameObject = region.Vertices[currentVertex];
+                Apply(currentVertex, vertexGameObject, RegionRendererConfig.Instance.CurrentVertex);
+            }
+
+            if (currentState != region.State)
+            {
+                
+            }
         }
         
         private void OnMove(RegionData.Vertex from, RegionData.Vertex to)
@@ -31,7 +59,7 @@ namespace Fizz6.Roguelike.World.Region
             {
                 var vertexGameObject = region.Vertices[from];
                 Apply(from, vertexGameObject, RegionRendererConfig.Instance.DefaultVertex);
-                foreach (var vertex in region.Data.Graph[from])
+                foreach (var vertex in region.RegionData.Graph[from])
                 {
                     var option = region.Vertices[vertex];
                     var edge = region.Edges[(from, vertex)];
@@ -44,7 +72,7 @@ namespace Fizz6.Roguelike.World.Region
             {
                 var vertexGameObject = region.Vertices[to];
                 Apply(to, vertexGameObject, RegionRendererConfig.Instance.CurrentVertex);
-                foreach (var vertex in region.Data.Graph[to])
+                foreach (var vertex in region.RegionData.Graph[to])
                 {
                     var option = region.Vertices[vertex];
                     var edge = region.Edges[(to, vertex)];

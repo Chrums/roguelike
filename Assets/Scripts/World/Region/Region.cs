@@ -1,20 +1,38 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using Fizz6.Roguelike.Input;
-using Fizz6.Serialization;
 using UnityEngine;
 
 namespace Fizz6.Roguelike.World.Region
 {
-    public class Region : MonoBehaviour
+    public class Region : SingletonMonoBehaviour<Region>
     {
         private const string VertexContainerName = "Vertices";
         private const string VertexName = "Vertex";
         private const string EdgeContainerName = "Edges";
         private const string EdgeName = "Edge";
-        
-        public RegionData Data { get; private set; }
+
+        public enum Control
+        {
+            Default,
+            Move
+        }
+
+        public RegionData RegionData { get; private set; }
+
+        private Control state;
+
+        public Control State
+        {
+            get => state;
+            set
+            {
+                state = value;
+                UpdateEvent?.Invoke();
+            }
+        }
         
         private RegionRenderer regionRenderer;
 
@@ -26,43 +44,48 @@ namespace Fizz6.Roguelike.World.Region
         private readonly Dictionary<(RegionData.Vertex, RegionData.Vertex), GameObject> edges = new();
         public IReadOnlyDictionary<(RegionData.Vertex, RegionData.Vertex), GameObject> Edges => edges;
         
-        public RegionData.Vertex CurrentVertex { get; private set; }
-
         public event Action<RegionData.Vertex, GameObject> InstantiateVertexEvent;
         public event Action<RegionData.Vertex, RegionData.Vertex, GameObject> InstantiateEdgeEvent;
+        public event Action UpdateEvent;
         public event Action<RegionData.Vertex, RegionData.Vertex> MoveEvent;
-        
-        private void Awake()
+
+        public void Load(RegionData regionData = null)
         {
-            Data = new RegionData();
-            regionRenderer = new RegionRenderer(this);
+            if (vertexContainer) Destroy(vertexContainer);
+            if (edgeContainer) Destroy(edgeContainer);
+
+            RegionData = regionData ?? RegionData.Generate();
             
             vertexContainer = new GameObject(VertexContainerName)
             {
-                transform = { parent = transform }
+                transform = { parent = transform },
+                hideFlags = HideFlags.NotEditable | 
+                            HideFlags.DontSave
             };
             
             edgeContainer = new GameObject(EdgeContainerName)
             {
-                transform = { parent = transform }
+                transform = { parent = transform },
+                hideFlags = HideFlags.NotEditable | 
+                            HideFlags.DontSave
             };
             
-            foreach (var vertex in Data.Graph.Vertices)
+            foreach (var vertex in RegionData.Graph.Vertices)
                 Instantiate(vertex);
             
-            foreach (var vertex in Data.Graph.Vertices)
-                foreach (var edge in Data.Graph[vertex])
+            foreach (var vertex in RegionData.Graph.Vertices)
+                foreach (var edge in RegionData.Graph[vertex])
                     Instantiate(vertex, edge);
-
-            CurrentVertex = Data.Start;
             
-            MoveEvent?.Invoke(null, CurrentVertex);
-
-            var serializer = new Serializer();
-            var json = serializer.Serialize(Data);
-            Data = serializer.Deserialize<RegionData>(json);
+            MoveEvent?.Invoke(null, RegionData.Current);
         }
-        
+
+        protected override void Awake()
+        {
+            base.Awake();
+            regionRenderer = new RegionRenderer(this);
+        }
+
         private void Instantiate(RegionData.Vertex vertex)
         {
             var vertexGameObject = new GameObject(VertexName)
@@ -70,7 +93,9 @@ namespace Fizz6.Roguelike.World.Region
                 transform =
                 {
                     parent = vertexContainer.transform,
-                    localPosition = vertex.Position
+                    localPosition = vertex.Position,
+                    hideFlags = HideFlags.NotEditable | 
+                                HideFlags.DontSave
                 }
             };
             
@@ -92,7 +117,9 @@ namespace Fizz6.Roguelike.World.Region
                 transform =
                 {
                     parent = edgeContainer.transform,
-                    localPosition = from.Position
+                    localPosition = from.Position,
+                    hideFlags = HideFlags.NotEditable | 
+                                HideFlags.DontSave
                 }
             };
             
@@ -103,9 +130,9 @@ namespace Fizz6.Roguelike.World.Region
 
         private void Move(RegionData.Vertex target)
         {
-            var current = CurrentVertex;
-            if (!Data.Graph[CurrentVertex].Contains(target)) return;
-            CurrentVertex = target;
+            var current = RegionData.Current;
+            if (!RegionData.Graph[RegionData.Current].Contains(target)) return;
+            RegionData.Current = target;
             MoveEvent?.Invoke(current, target);
         }
     }

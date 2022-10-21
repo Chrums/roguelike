@@ -1,7 +1,7 @@
 using System;
 using Fizz6.Roguelike.Minion.Abilities;
 
-namespace Fizz6.Roguelike.Battle.Statuses
+namespace Fizz6.Roguelike.Battle.Status
 {
     [Serializable]
     public class WeatherBattleStatus : BattleStatus<WeatherBattleStatus>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DelaunatorSharp.WPF"
         mc:Ignorable="d"
         FontSize="10"
-        Background="DarkGray"
+        BackZone="DarkGray"
         WindowStartupLocation="CenterScreen"
         Title="Delaunator" Height="800" Width="800">
     <Grid>

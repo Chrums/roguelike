@@ -1,8 +1,8 @@
 using System;
-using Fizz6.Roguelike.Statuses;
+using Fizz6.Roguelike.Status;
 using Newtonsoft.Json;
 
-namespace Fizz6.Roguelike.Minion.Statuses
+namespace Fizz6.Roguelike.Minion.Status
 {
     [Serializable]
     public class MinionStatuses : Statuses<MinionStatus>, IDisposable

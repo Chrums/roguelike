@@ -1,0 +1,1343 @@
+{
+  "$type": "Fizz6.Roguelike.World.Region.RegionData, Assembly-CSharp",
+  "Graph": {
+    "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node[], Assembly-CSharp",
+    "$values": [
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.100723743,
+            -7.61169863
+          ],
+          "ZoneType": 0
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            1,
+            39,
+            53,
+            63
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.07476425,
+            -6.586791
+          ],
+          "ZoneType": 6
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            2,
+            25
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            0.887845039,
+            -6.071863
+          ],
+          "ZoneType": 7
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            3
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            0.8573847,
+            -5.044216
+          ],
+          "ZoneType": 2
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            4,
+            20
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            0.8655443,
+            -3.70841837
+          ],
+          "ZoneType": 2
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            5,
+            21
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            0.6753979,
+            -2.41709566
+          ],
+          "ZoneType": 6
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            6
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            0.446167946,
+            -1.388123
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            7,
+            14
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.3040433,
+            0.126536369
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            8
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.499536037,
+            1.43662357
+          ],
+          "ZoneType": 5
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            9
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.410789,
+            3.03029251
+          ],
+          "ZoneType": 1
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            10,
+            35
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.5743284,
+            4.80029964
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            11
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.208649158,
+            5.894829
+          ],
+          "ZoneType": 2
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            12
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            0.4073639,
+            6.790944
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            13
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            1.18630314,
+            7.87134743
+          ],
+          "ZoneType": 0
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": []
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            0.7777147,
+            -0.441317558
+          ],
+          "ZoneType": 1
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            15
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            0.816779137,
+            0.8596964
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            16
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            1.603117,
+            1.64473438
+          ],
+          "ZoneType": 3
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            17
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            1.61463642,
+            2.94144154
+          ],
+          "ZoneType": 6
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            18
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            1.3245821,
+            4.613017
+          ],
+          "ZoneType": 2
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            19
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            0.804741859,
+            5.54497433
+          ],
+          "ZoneType": 2
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            12
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            1.83963108,
+            -4.62430763
+          ],
+          "ZoneType": 1
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            21
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            1.90707207,
+            -3.32138824
+          ],
+          "ZoneType": 7
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            22,
+            61
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            1.5789299,
+            -1.62359047
+          ],
+          "ZoneType": 6
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            23
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            1.8747015,
+            -0.265617371
+          ],
+          "ZoneType": 1
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            24
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            2.31389332,
+            0.665385246
+          ],
+          "ZoneType": 2
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            16,
+            47
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.8032026,
+            -5.625231
+          ],
+          "ZoneType": 3
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            26,
+            60
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -1.15589714,
+            -4.521675
+          ],
+          "ZoneType": 1
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            27,
+            29
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.262546539,
+            -3.67324066
+          ],
+          "ZoneType": 7
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            28
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.6667118,
+            -2.03531027
+          ],
+          "ZoneType": 6
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            6,
+            31
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -1.41328716,
+            -3.061965
+          ],
+          "ZoneType": 1
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            30
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -1.82699585,
+            -1.823441
+          ],
+          "ZoneType": 5
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            31
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -1.15263748,
+            -0.6995888
+          ],
+          "ZoneType": 2
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            32
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -1.66523981,
+            0.684380531
+          ],
+          "ZoneType": 5
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            33
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -1.90483856,
+            1.68429756
+          ],
+          "ZoneType": 3
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            34
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -1.94385672,
+            2.89566422
+          ],
+          "ZoneType": 6
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            35
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -1.43917751,
+            3.95983124
+          ],
+          "ZoneType": 6
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            36
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -1.65471935,
+            5.750927
+          ],
+          "ZoneType": 5
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            37,
+            11
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.9732914,
+            6.93240166
+          ],
+          "ZoneType": 5
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            38,
+            12
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.4367962,
+            7.852683
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            13
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            0.873726845,
+            -7.250229
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            40
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            1.80159855,
+            -6.84727
+          ],
+          "ZoneType": 5
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            41
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            2.368456,
+            -5.52805233
+          ],
+          "ZoneType": 5
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            42
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            2.99829769,
+            -3.97562075
+          ],
+          "ZoneType": 7
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            43
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            3.507575,
+            -2.693646
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            44
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            3.96451187,
+            -1.43648815
+          ],
+          "ZoneType": 3
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            45
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            3.57720184,
+            -0.225728035
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            46,
+            24
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            3.47170067,
+            0.9766884
+          ],
+          "ZoneType": 7
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            47
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            2.72142982,
+            1.85757065
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            48
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            2.55793953,
+            3.6459074
+          ],
+          "ZoneType": 6
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            49
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            2.628189,
+            4.893923
+          ],
+          "ZoneType": 2
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            50,
+            52
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            3.201703,
+            5.75999737
+          ],
+          "ZoneType": 6
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            51
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            2.407548,
+            6.783291
+          ],
+          "ZoneType": 7
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            13
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            1.7980814,
+            5.933117
+          ],
+          "ZoneType": 7
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            12
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -1.33465767,
+            -6.84575844
+          ],
+          "ZoneType": 7
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            25,
+            54
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -2.00368214,
+            -5.55944872
+          ],
+          "ZoneType": 6
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            55
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -3.07522774,
+            -4.78824759
+          ],
+          "ZoneType": 7
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            56,
+            65
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -3.07080984,
+            -3.08110332
+          ],
+          "ZoneType": 0
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            57
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -3.018641,
+            -1.34024715
+          ],
+          "ZoneType": 1
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            58
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -2.837192,
+            -0.332201
+          ],
+          "ZoneType": 3
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            59
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -2.73623466,
+            0.953022957
+          ],
+          "ZoneType": 7
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            33
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -0.126408577,
+            -4.667205
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            4
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            2.560915,
+            -2.18363667
+          ],
+          "ZoneType": 1
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            62
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            2.97777367,
+            -1.26569366
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            45
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -2.27161217,
+            -7.38219929
+          ],
+          "ZoneType": 2
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            64
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -3.16734886,
+            -5.92225647
+          ],
+          "ZoneType": 1
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            55
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -4.219101,
+            -3.2731657
+          ],
+          "ZoneType": 2
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            66
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -3.82698774,
+            -2.01612568
+          ],
+          "ZoneType": 3
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            57,
+            67
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -4.025737,
+            -0.936916351
+          ],
+          "ZoneType": 3
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            68
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -3.87703419,
+            0.325766563
+          ],
+          "ZoneType": 3
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            69
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -3.943831,
+            1.77289486
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            70
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -4.00846672,
+            2.96684933
+          ],
+          "ZoneType": 6
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            71,
+            73
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -3.05486965,
+            3.41211987
+          ],
+          "ZoneType": 6
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            72
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -2.44736719,
+            4.479171
+          ],
+          "ZoneType": 4
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            36
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -3.5217886,
+            4.45649338
+          ],
+          "ZoneType": 7
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            74
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -2.97446156,
+            5.39324856
+          ],
+          "ZoneType": 3
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            75
+          ]
+        }
+      },
+      {
+        "$type": "Fizz6.Roguelike.Serialization.GraphConverter+Node, Assembly-CSharp",
+        "Item": {
+          "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+          "Position": [
+            -2.63557053,
+            6.40663242
+          ],
+          "ZoneType": 0
+        },
+        "Edges": {
+          "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+          "$values": [
+            37
+          ]
+        }
+      }
+    ]
+  },
+  "Start": {
+    "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+    "Position": [
+      -0.100723743,
+      -7.61169863
+    ],
+    "ZoneType": 0
+  },
+  "End": {
+    "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+    "Position": [
+      1.18630314,
+      7.87134743
+    ],
+    "ZoneType": 0
+  },
+  "Current": {
+    "$type": "Fizz6.Roguelike.World.Region.RegionData+Vertex, Assembly-CSharp",
+    "Position": [
+      -0.100723743,
+      -7.61169863
+    ],
+    "ZoneType": 0
+  }
+}

@@ -1,6 +1,6 @@
-using Fizz6.Roguelike.Statuses;
+using Fizz6.Roguelike.Status;
 
-namespace Fizz6.Roguelike.Battle.Statuses
+namespace Fizz6.Roguelike.Battle.Status
 {
     public abstract class BattleStatus : Status<BattleStatus>
     {

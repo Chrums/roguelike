@@ -1,7 +1,7 @@
 using System;
 using Fizz6.Roguelike.Minion.Abilities;
 
-namespace Fizz6.Roguelike.Minion.Statuses
+namespace Fizz6.Roguelike.Minion.Status
 {
     [Serializable]
     public abstract class AbilityMinionStatus<TMinionStatus> : MinionStatus<TMinionStatus> where TMinionStatus : MinionStatus<TMinionStatus>

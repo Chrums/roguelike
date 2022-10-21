@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Fizz6.Core;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Fizz6.Collections.Graph
 {
@@ -20,27 +19,28 @@ namespace Fizz6.Collections.Graph
         private static TVertex[,,] Grid<TVertex>(this Graph<TVertex> graph, Vector3Int dimensions, Func<Vector3Int, TVertex> constructor = null)
             where TVertex : class
         {
-            var grid = new TVertex[dimensions.x, dimensions.y, dimensions.z];
             graph.Clear();
+            
+            var grid = new TVertex[
+                dimensions.x, 
+                dimensions.y, 
+                dimensions.z
+            ];
 
             for (var x = 0; x < dimensions.x; ++x)
+            for (var y = 0; y < dimensions.y; ++y)
+            for (var z = 0; z < dimensions.z; ++z)
             {
-                for (var y = 0; y < dimensions.y; ++y)
-                {
-                    for (var z = 0; z < dimensions.z; ++z)
-                    {
-                        var cell = new Vector3Int(x, y, z);
-                        var vertex = constructor?.Invoke(cell) ?? Activator.CreateInstance<TVertex>();
-                        graph.Add(vertex);
-                        grid[x, y, z] = vertex;
-                    }
-                }
+                var cell = new Vector3Int(x, y, z);
+                var vertex = constructor?.Invoke(cell) ?? Activator.CreateInstance<TVertex>();
+                graph.Add(vertex);
+                grid[x, y, z] = vertex;
             }
             
             return grid;
         }
 
-        private static readonly IEnumerable<Vector3Int> Directions = new List<Vector3Int>
+        public static readonly IEnumerable<Vector3Int> Directions = new List<Vector3Int>
         {
             Vector3Int.left,
             Vector3Int.right,
@@ -50,40 +50,56 @@ namespace Fizz6.Collections.Graph
             Vector3Int.forward
         };
 
-        public static Graph<TVertex> RecursiveBacktrack<TVertex>(Vector3Int dimensions, out TVertex[,,] grid, Func<Vector3Int, TVertex> constructor = null)
+        public class RecursiveBacktrackConfiguration
+        {
+            public bool Directional { get; set; } = true;
+        }
+
+        private static readonly RecursiveBacktrackConfiguration DefaultRecursiveBacktrackConfiguration = new ();
+
+        public static Graph<TVertex> RecursiveBacktrack<TVertex>(Vector3Int dimensions, out TVertex[,,] grid, Func<Vector3Int, TVertex> constructor = null, RecursiveBacktrackConfiguration config = null)
             where TVertex : class
         {
             var graph = new Graph<TVertex>();
-            grid = graph.RecursiveBacktrack(dimensions, constructor);
+            config ??= DefaultRecursiveBacktrackConfiguration;
+            grid = graph.RecursiveBacktrack(dimensions, constructor, config);
             return graph;
         }
 
-        private static TVertex[,,] RecursiveBacktrack<TVertex>(this Graph<TVertex> graph, Vector3Int dimensions, Func<Vector3Int, TVertex> constructor = null)
+        private static TVertex[,,] RecursiveBacktrack<TVertex>(this Graph<TVertex> graph, Vector3Int dimensions, Func<Vector3Int, TVertex> constructor = null, RecursiveBacktrackConfiguration config = null)
             where TVertex : class
         {
+            config ??= DefaultRecursiveBacktrackConfiguration;
+            
             var grid = graph.Grid(dimensions, constructor);
-            var exploration = new bool[dimensions.x, dimensions.y, dimensions.z];
+            
+            var exploration = new bool[
+                dimensions.x, 
+                dimensions.y, 
+                dimensions.z
+            ];
 
             void Explore(Vector3Int cell)
             {
                 foreach (var direction in Directions.Shuffle())
                 {
                     var other = cell + direction;
-                    if (other.x < 0 || other.x > dimensions.x - 1 || 
-                        other.y < 0 || other.y > dimensions.y - 1 ||
-                        other.z < 0 || other.z > dimensions.z - 1 || 
+                    if (other.x < 0 || other.x >= dimensions.x || 
+                        other.y < 0 || other.y >= dimensions.y ||
+                        other.z < 0 || other.z >= dimensions.z || 
                         exploration[other.x, other.y, other.z]) continue;
                     exploration[other.x, other.y, other.z] = true;
                     var vertex0 = grid[cell.x, cell.y, cell.z];
                     var vertex1 = grid[other.x, other.y, other.z];
                     graph.Add(vertex0, vertex1);
-                    graph.Add(vertex1, vertex0);
+                    if (!config.Directional) graph.Add(vertex1, vertex0);
                     Explore(other);
                 }
             }
 
             exploration[0, 0, 0] = true;
-            Explore(Vector3Int.zero);
+            var cell = Vector3Int.zero;
+            Explore(cell);
             
             return grid;
         }
@@ -102,7 +118,7 @@ namespace Fizz6.Collections.Graph
             return graph.Search(from, to, () => queue.Count, queue.Dequeue, queue.Enqueue);
         }
 
-        public interface IWeighted<TVertex> where TVertex : class
+        public interface IWeighted<in TVertex> where TVertex : class
         {
             public float Weight(TVertex other);
         }

@@ -1,5 +1,5 @@
 using System;
-using Fizz6.Roguelike.Minion.Statuses;
+using Fizz6.Roguelike.Minion.Status;
 using Fizz6.SerializeImplementation;
 using UnityEngine;
 using Random = UnityEngine.Random;

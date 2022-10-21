@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Fizz6
 {
@@ -16,12 +17,20 @@ namespace Fizz6
                 {
                     _singletonGameObject = new GameObject(SingletonGameObjectName)
                     {
-                        hideFlags = HideFlags.DontSave
+                        hideFlags = HideFlags.NotEditable | 
+                                    HideFlags.DontSave
                     };
+                    
+                    DontDestroyOnLoad(_singletonGameObject);
                 }
 
                 return _singletonGameObject;
             }
+        }
+
+        protected virtual void OnApplicationQuit()
+        {
+            Destroy(_singletonGameObject);
         }
     }
     
@@ -32,9 +41,26 @@ namespace Fizz6
             ? _instance = SingletonGameObject.AddComponent<T>()
             : _instance;
 
+        protected virtual void Awake()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.sceneUnloaded += OnSceneUnloaded;
+        }
+
         protected virtual void OnDestroy()
         {
             _instance = null;
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        }
+        
+        protected virtual void OnSceneLoaded(Scene scene, LoadSceneMode mode) {}
+        protected virtual void OnSceneUnloaded(Scene scene) {}
+
+        protected override void OnApplicationQuit()
+        {
+            base.OnApplicationQuit();
+            Destroy(_instance);
         }
     }
 }

@@ -11,20 +11,24 @@ using UnityEngine;
 
 namespace Fizz6.Roguelike.World.Region
 {
-    public class RegionData
+    public partial class RegionData
     {
-        public class Vertex : GraphExt.IWeighted<Vertex>
+        public class Vertex : GraphExt.IWeighted<Vertex>, IEquatable<Vertex>
         {
             [JsonProperty]
             public Vector2 Position { get; }
             
             [JsonProperty]
             public ZoneType ZoneType { get; }
+            
+            [JsonProperty]
+            public ZoneData ZoneData { get; }
 
             public Vertex(Vector2 position, ZoneType zoneType)
             {
                 Position = position;
                 ZoneType = zoneType;
+                ZoneData = ZoneData.Generate(0, zoneType, new Vector2Int(4, 4));
             }
 
             public float Weight(Vertex other) =>
@@ -32,19 +36,32 @@ namespace Fizz6.Roguelike.World.Region
                     new Vector2(Position.x, Position.y),
                     new Vector2(other.Position.x, other.Position.y)
                 );
+
+            public bool Equals(Vertex other)
+            {
+                if (ReferenceEquals(null, other)) return false;
+                if (ReferenceEquals(this, other)) return true;
+                return Position.Equals(other.Position) && ZoneType == other.ZoneType;
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (ReferenceEquals(null, obj)) return false;
+                if (ReferenceEquals(this, obj)) return true;
+                if (obj.GetType() != this.GetType()) return false;
+                return Equals((Vertex)obj);
+            }
+
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(Position, (int)ZoneType);
+            }
         }
-        
-        [JsonProperty]
-        public Graph<Vertex> Graph { get; private set; } = new();
 
-        [JsonProperty] 
-        public Vertex Start { get; private set; }
-
-        [JsonProperty]
-        public Vertex End { get; private set; }
-
-        public RegionData()
+        public static RegionData Generate()
         {
+            var regionData = new RegionData();
+            
             var types = (ZoneType[])Enum.GetValues(typeof(ZoneType));
             var weights = types.Select(type => RegionConfig.Instance.Zones[type].Weight).ToArray();
             
@@ -103,14 +120,15 @@ namespace Fizz6.Roguelike.World.Region
                 possibilities.Add(vertex2, vertex0);
             }
 
-            Start = vertices[startIndex];
-            End = vertices[endIndex];
+            regionData.Start = vertices[startIndex];
+            regionData.End = vertices[endIndex];
+            regionData.Current = regionData.Start;
 
             var paths = new List<List<Vertex>>();
 
             for (var index = 0; index < RegionConfig.Instance.Paths; ++index)
             {
-                var path = possibilities.Dijkstra(Start, End);
+                var path = possibilities.Dijkstra(regionData.Start, regionData.End);
                 if (path == null || path.Count < 4) continue;
                 paths.Add(path);
                 var elimination = UnityEngine.Random.Range(1, path.Count - 1);
@@ -123,11 +141,25 @@ namespace Fizz6.Roguelike.World.Region
                 Vertex other = null;
                 foreach (var vertex in path)
                 {
-                    Graph.Add(vertex);
-                    if (other != null) Graph.Add(other, vertex);
+                    regionData.Graph.Add(vertex);
+                    if (other != null) regionData.Graph.Add(other, vertex);
                     other = vertex;
                 }
             }
+
+            return regionData;
         }
+        
+        [JsonProperty]
+        public Graph<Vertex> Graph { get; private set; } = new();
+
+        [JsonProperty] 
+        public Vertex Start { get; private set; }
+
+        [JsonProperty]
+        public Vertex End { get; private set; }
+        
+        [JsonProperty]
+        public Vertex Current { get; set; }
     }
 }

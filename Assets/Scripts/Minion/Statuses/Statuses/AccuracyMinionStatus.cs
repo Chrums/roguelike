@@ -3,7 +3,7 @@ using Fizz6.Roguelike.Minion.Abilities;
 using Newtonsoft.Json;
 using UnityEngine;
 
-namespace Fizz6.Roguelike.Minion.Statuses
+namespace Fizz6.Roguelike.Minion.Status
 {
     [Serializable]
     public class AccuracyMinionStatus : AbilityUserMinionStatus<AccuracyMinionStatus>

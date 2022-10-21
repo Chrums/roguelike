@@ -4,10 +4,7 @@ namespace Fizz6.Roguelike
 {
     public class Boot : MonoBehaviour
     {
-        private void Awake()
-        {
-            // var world = World.WorldData.Generate();
-            // World.WorldData.Save(world, "Assets/test.json");
-        }
+        private async void Awake() => await Core.Load();
+        private async void OnApplicationQuit() => await Core.Save();
     }
 }

@@ -3,7 +3,7 @@ using Fizz6.Core;
 using Fizz6.Roguelike.Minion.Abilities;
 using Fizz6.Roguelike.Minion.Items;
 using Fizz6.Roguelike.Minion.Statistics;
-using Fizz6.Roguelike.Minion.Statuses;
+using Fizz6.Roguelike.Minion.Status;
 using Newtonsoft.Json;
 
 namespace Fizz6.Roguelike.Minion

@@ -1,7 +1,7 @@
 using Fizz6.Core;
 using UnityEngine;
 
-namespace Fizz6.Roguelike.Minion.Statuses
+namespace Fizz6.Roguelike.Minion.Status
 {
     [CreateAssetMenu(fileName = "AccuracyMinionStatusConfig", menuName = "Fizz6/Roguelike/Minion/Statuses/Accuracy")]
     public class AccuracyMinionStatusConfig : SingletonScriptableObject<AccuracyMinionStatusConfig>

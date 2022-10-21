@@ -1,7 +1,7 @@
 using System;
 using Random = UnityEngine.Random;
 
-namespace Fizz6.Roguelike.Minion.Statuses
+namespace Fizz6.Roguelike.Minion.Status
 {
     [Serializable]
     public class SleepMinionStatus : MinionStatus<SleepMinionStatus>

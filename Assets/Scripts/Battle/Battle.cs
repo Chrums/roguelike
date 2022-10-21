@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Fizz6.Core;
-using Fizz6.Roguelike.Battle.Statuses;
+using Fizz6.Roguelike.Battle.Status;
 using Fizz6.Roguelike.Battle.Trainers;
 using Fizz6.Roguelike.Minion.Abilities;
 using UnityEngine;

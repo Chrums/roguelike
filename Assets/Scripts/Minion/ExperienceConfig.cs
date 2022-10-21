@@ -1,10 +1,11 @@
 using Fizz6.Core;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Fizz6.Roguelike.Minion.Statuses
 {
     [CreateAssetMenu(fileName = "ExperienceConfig", menuName = "Fizz6/Roguelike/Minion/Experience")]
-    public class ExperienceConfig : SingletonScriptableObject<AccuracyMinionStatusConfig>
+    public class ExperienceConfig : SingletonScriptableObject<ExperienceConfig>
     {
         [SerializeField]
         private int maximumLevel = 100;
@@ -16,10 +17,8 @@ namespace Fizz6.Roguelike.Minion.Statuses
         [SerializeField]
         private AnimationCurve curve;
 
-        private void OnValidate()
-        {
-            
-        }
+        [SerializeField]
+        public Tile Tile;
 
         public int this[int level] => 
             Mathf.FloorToInt(

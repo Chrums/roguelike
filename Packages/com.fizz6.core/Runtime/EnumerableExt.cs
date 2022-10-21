@@ -6,9 +6,12 @@ namespace Fizz6.Core
 {
     public static class EnumerableExt
     {
-        private static Random Randomizer = new();
+        private static readonly Random Randomizer = new();
         
-        public static T Random<T>(this IEnumerable<T> enumerable) => 
+        public static bool Random<T>(this IEnumerable<T> enumerable, out T result) => 
+            enumerable.ToList().Random(out result);
+
+        public static T Random<T>(this IEnumerable<T> enumerable) where T : class =>
             enumerable.ToList().Random();
 
         public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> enumerable) =>
